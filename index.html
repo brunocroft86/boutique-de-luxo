@@ -450,7 +450,9 @@
         .card img {
             width: 100%;
             height: 280px; /* Altura original para telas grandes */
-            object-fit: cover;
+            object-fit: contain; /* AJUSTE: Não corta mais as imagens */
+            object-position: center; /* AJUSTE: Centraliza perfeitamente */
+            background-color: #fff; /* Fundo branco pra não vazar cinza se a imagem for PNG */
             border-radius: 8px;
             margin-bottom: 15px;
         }
