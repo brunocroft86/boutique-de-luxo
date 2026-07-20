@@ -10,14 +10,14 @@
     <meta name="keywords" content="Boutique de Luxo, Joias, Semijoias, Folheados, Ouro, Prata, Maquiagem, Bijuterias, Aço Inoxidável">
     <meta name="author" content="Boutique de Luxo">
 
-    <!-- Open Graph (Para compartilhar nas redes sociais e WhatsApp) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Boutique de Luxo | As melhores peças com requinte">
     <meta property="og:description" content="Venha conferir nosso catálogo de joias, semijoias, maquiagens e acessórios.">
     <meta property="og:image" content="img/boutique.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
 
-    <!-- Font Awesome para os ícones -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -36,14 +36,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: #fff;
-            color: var(--primary-color);
-        }
+        html { scroll-behavior: smooth; }
+        body { background-color: #fff; color: var(--primary-color); }
 
         /* Cabeçalho */
         header {
@@ -139,116 +133,42 @@
         }
 
         /* Menu de Navegação PC */
-        nav {
-            background-color: #fff;
-            padding: 0 5%;
-        }
-
-        nav ul.main-menu {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        nav ul.main-menu > li {
-            position: relative;
-            padding: 20px 0;
-        }
-
+        nav { background-color: #fff; padding: 0 5%; }
+        nav ul.main-menu { list-style: none; display: flex; justify-content: center; gap: 30px; flex-wrap: wrap; }
+        nav ul.main-menu > li { position: relative; padding: 20px 0; }
         nav ul.main-menu > li > a {
-            text-decoration: none;
-            color: var(--primary-color);
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 5px;
+            text-decoration: none; color: var(--primary-color); font-weight: 600; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; transition: color 0.3s ease; display: flex; align-items: center; gap: 5px;
         }
-
-        nav ul.main-menu > li > a i {
-            transition: transform 0.3s ease;
-        }
-
-        nav ul.main-menu > li:hover > a {
-            color: var(--accent-color);
-        }
+        nav ul.main-menu > li > a i { transition: transform 0.3s ease; }
+        nav ul.main-menu > li:hover > a { color: var(--accent-color); }
 
         /* Mega Menu Dropdown */
         .mega-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #fff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            border-radius: 8px;
-            width: max-content;
-            max-width: 90vw;
-            padding: 20px;
-            display: none;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            border-top: 3px solid var(--accent-color);
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%); background-color: #fff; box-shadow: 0 10px 30px rgba(0,0,0,0.15); border-radius: 8px; width: max-content; max-width: 90vw; padding: 20px; display: none; grid-template-columns: repeat(3, 1fr); gap: 20px; border-top: 3px solid var(--accent-color); opacity: 0; transition: opacity 0.3s ease;
         }
 
-        @media (min-width: 993px) {
-            nav ul.main-menu > li:hover .mega-menu {
-                display: grid;
-                opacity: 1;
-            }
-        }
+        @media (min-width: 993px) { nav ul.main-menu > li:hover .mega-menu { display: grid; opacity: 1; } }
+        nav ul.main-menu > li:first-child .mega-menu { left: 0; transform: translateX(0); }
+        nav ul.main-menu > li:last-child .mega-menu { left: auto; right: 0; transform: translateX(0); }
 
-        nav ul.main-menu > li:first-child .mega-menu {
-            left: 0;
-            transform: translateX(0);
-        }
+        .menu-item { display: flex; align-items: center; gap: 15px; padding: 10px; border-radius: 8px; text-decoration: none; color: #555; transition: background 0.3s; }
+        .menu-item:hover { background-color: var(--bg-light); color: var(--primary-color); }
+        .menu-item img { width: 50px; height: 50px; object-fit: cover; border-radius: 50%; border: 2px solid var(--border-color); }
+        .menu-item span { font-size: 14px; font-weight: 500; }
 
-        nav ul.main-menu > li:last-child .mega-menu {
-            left: auto;
-            right: 0;
-            transform: translateX(0);
-        }
-
-        .menu-item {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            color: #555;
-            transition: background 0.3s;
-        }
-
-        .menu-item:hover {
-            background-color: var(--bg-light);
-            color: var(--primary-color);
-        }
-
-        .menu-item img {
-            width: 50px;
-            height: 50px;
-            object-fit: cover;
-            border-radius: 50%;
-            border: 2px solid var(--border-color);
-        }
-
-        .menu-item span {
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        /* RESPONSIVIDADE PARA CELULAR (Navegação) */
+        /* RESPONSIVIDADE PARA CELULAR (Navegação + Logo) */
         @media (max-width: 992px) {
-            .logo { flex-basis: auto; }
-            .logo img { height: 70px; transform: scale(1); }
+            /* EXPANSÃO DA LOGO NO CELULAR */
+            .logo { 
+                flex-basis: 75%; 
+                max-width: 250px; 
+            }
+            .logo img { 
+                height: 85px; 
+                transform: scale(1.2); 
+                transform-origin: left center; 
+            }
+            
             .top-bar { justify-content: space-between; gap: 15px; }
             .search-bar { order: 3; width: 100%; max-width: 100%; margin: 0; }
             .mobile-menu-btn { display: block; }
@@ -262,16 +182,10 @@
             nav ul.main-menu > li.active-submenu > a i { transform: rotate(180deg); }
         }
 
-        /* Banner Principal Paralaxe - Reduzido */
+        /* Banner Principal Paralaxe */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            height: 250px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-align: center;
-            padding: 0 20px;
+            height: 250px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px;
         }
 
         .hero h1 { font-size: 40px; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
@@ -283,167 +197,104 @@
         }
 
         /* Vitrine de Produtos */
-        .category-section {
-            padding: 60px 5%;
-            background-color: var(--bg-light);
-            scroll-margin-top: 200px; 
-        }
-
+        .category-section { padding: 60px 5%; background-color: var(--bg-light); scroll-margin-top: 200px; }
         .category-section:nth-child(even) { background-color: #fff; }
-        
-        .category-section h2 {
-            text-align: center;
-            margin-bottom: 50px;
-            color: var(--primary-color);
-            font-size: 32px;
-            position: relative;
-        }
+        .category-section h2 { text-align: center; margin-bottom: 50px; color: var(--primary-color); font-size: 32px; position: relative; }
+        .category-section h2::after { content: ''; width: 60px; height: 3px; background-color: var(--accent-color); display: block; margin: 10px auto 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; }
 
-        .category-section h2::after {
-            content: '';
-            width: 60px;
-            height: 3px;
-            background-color: var(--accent-color);
-            display: block;
-            margin: 10px auto 0;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 40px;
-        }
-
-        /* CONFIGURAÇÃO PARA 2 COLUNAS NO CELULAR */
+        /* 2 COLUNAS NO CELULAR */
         @media (max-width: 600px) {
             .category-section { padding: 40px 5%; }
             .category-section h2 { margin-bottom: 30px; font-size: 24px; }
-            .grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 10px;
-            }
+            .grid { grid-template-columns: 1fr 1fr; gap: 10px; }
             .card { padding: 10px; }
             .card h3 { font-size: 13px; min-height: auto; margin-bottom: 10px; }
             .card .price { font-size: 16px; margin-bottom: 12px; }
             .btn-comprar { font-size: 12px; padding: 8px; }
         }
 
-        /* Cartões de Produtos e Efeito Alvo */
+        /* Cartões de Produtos */
         .card {
-            background: #fff;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-            scroll-margin-top: 220px; 
-            border: 2px solid transparent; 
-            
-            display: flex;
-            flex-direction: column;
-            height: 100%; 
+            background: #fff; border-radius: 12px; padding: 20px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease; scroll-margin-top: 220px; border: 2px solid transparent; display: flex; flex-direction: column; height: 100%; 
         }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .card:target {
-            border: 2px solid var(--accent-color);
-            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-            animation: piscarAlvo 1s ease 3; 
-        }
+        .card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
+        .card:target { border: 2px solid var(--accent-color); box-shadow: 0 0 25px rgba(212, 175, 55, 0.4); animation: piscarAlvo 1s ease 3; }
 
         @keyframes piscarAlvo {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.03); }
-            100% { transform: scale(1); }
+            0% { transform: scale(1); } 50% { transform: scale(1.03); } 100% { transform: scale(1); }
         }
 
-        /* MÁGICA DA IMAGEM QUADRADA (1:1) */
+        /* Imagem do Produto */
         .card img {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 1 / 1; 
-            object-fit: cover; 
-            object-position: center;
-            border-radius: 8px;
-            margin-bottom: 15px;
-            background-color: #fff;
+            width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; border-radius: 8px; margin-bottom: 15px; background-color: #fff;
+            cursor: zoom-in; /* Ícone de lupa ao passar o mouse */
         }
 
-        .card h3 {
-            font-size: 18px;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-            font-weight: 600;
-            line-height: 1.3;
-        }
+        .card h3 { font-size: 18px; margin-bottom: 10px; color: var(--primary-color); font-weight: 600; line-height: 1.3; }
+        .card .price { font-size: 22px; font-weight: bold; color: var(--accent-color); margin-bottom: 15px; margin-top: auto; }
 
-        .card .price {
-            font-size: 22px;
-            font-weight: bold;
-            color: var(--accent-color);
-            margin-bottom: 15px;
-            margin-top: auto; 
-        }
-
-        .btn-comprar {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: 100%;
-            padding: 12px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-            transition: background 0.3s ease;
-        }
-
+        .btn-comprar { display: inline-flex; align-items: center; justify-content: center; gap: 8px; width: 100%; padding: 12px; background-color: var(--whatsapp-green); color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 16px; transition: background 0.3s ease; }
         .btn-comprar:hover { background-color: #1ebe57; }
 
         /* Botão WhatsApp Flutuante */
-        .whatsapp-float {
-            position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 40px;
-            right: 40px;
-            background-color: var(--whatsapp-green);
-            color: #FFF;
-            border-radius: 50px;
-            text-align: center;
-            font-size: 35px;
-            box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
+        .whatsapp-float { position: fixed; width: 65px; height: 65px; bottom: 40px; right: 40px; background-color: var(--whatsapp-green); color: #FFF; border-radius: 50px; text-align: center; font-size: 35px; box-shadow: 2px 2px 15px rgba(0,0,0,0.2); z-index: 1000; display: flex; align-items: center; justify-content: center; text-decoration: none; transition: transform 0.3s ease; }
         .whatsapp-float:hover { transform: scale(1.1); }
 
         /* Rodapé */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 40px 20px;
-        }
-
+        footer { background-color: var(--primary-color); color: white; text-align: center; padding: 40px 20px; }
         footer .social-icons { margin-bottom: 20px; }
         footer .social-icons a { color: white; font-size: 28px; margin: 0 15px; text-decoration: none; transition: color 0.3s; }
         footer .social-icons a:hover { color: var(--accent-color); }
-        
-        /* Ocultar elementos via JavaScript */
         .hidden { display: none !important; }
+
+        /* ======== MODAL DE ZOOM NAS IMAGENS ======== */
+        .modal {
+            display: none; /* Escondido por padrão */
+            position: fixed; 
+            z-index: 2000; /* Fica por cima de tudo, incluindo o header */
+            padding-top: 60px; 
+            left: 0;
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: rgba(0,0,0,0.9); /* Fundo preto transparente */
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 90%;
+            max-width: 500px; /* Tamanho máximo do zoom */
+            border-radius: 8px;
+            animation: zoomIn 0.3s ease;
+        }
+
+        @keyframes zoomIn {
+            from {transform: scale(0.8); opacity: 0;}
+            to {transform: scale(1); opacity: 1;}
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+            z-index: 2001;
+        }
+
+        .close-modal:hover,
+        .close-modal:focus {
+            color: var(--accent-color);
+            text-decoration: none;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -623,37 +474,37 @@
         <h2>Aço Inoxidável</h2>
         <div class="grid">
             <div class="card" id="argola-aco">
-                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Argola">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Argola Aço Inoxidável Modelos Variados">
                 <h3>Argola Aço Inoxidável Modelos Variados</h3>
                 <p class="price">R$ 35,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Aço%20Inoxidável" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colar-autismo">
-                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=500&q=80" alt="Colar Autismo">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=500&q=80" alt="Colar Autismo Aço Inoxidável">
                 <h3>Colar Autismo Aço Inoxidável</h3>
                 <p class="price">R$ 49,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Autismo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colares-feminino-aco">
-                <img src="img/colarfemininoaco.jpg" alt="Colares Feminino">
+                <img src="img/colarfemininoaco.jpg" alt="Colares Femininos Aço">
                 <h3>Colares Femininos Aço</h3>
                 <p class="price">R$ 59,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Feminino%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="conjunto-aco">
-                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Conjunto">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Conjunto Aço Inoxidável Premium">
                 <h3>Conjunto Aço Inoxidável Premium</h3>
                 <p class="price">R$ 89,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="piercing-aco">
-                <img src="img/piercingpendurado.jpg" alt="Piercing">
+                <img src="img/piercingpendurado.jpg" alt="Piercing Umbigo Pendurado Aço">
                 <h3>Piercing Umbigo Pendurado Aço</h3>
                 <p class="price">R$ 29,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Piercing%20Umbigo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="trio-brinco-aco">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Trio Brinco">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Trio de Brincos Aço">
                 <h3>Trio de Brincos Aço</h3>
                 <p class="price">R$ 55,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Trio%20de%20Brincos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -666,19 +517,19 @@
         <h2>Bijuterias</h2>
         <div class="grid">
             <div class="card" id="brinco-frutas-biju">
-                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Frutinhas">
+                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Frutinhas Coloridas Bijuteria">
                 <h3>Brinco Frutinhas Coloridas Bijuteria</h3>
                 <p class="price">R$ 15,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Frutinhas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-g-biju">
-                <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco G">
+                <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Argola G Bijuteria">
                 <h3>Brinco Argola G Bijuteria</h3>
                 <p class="price">R$ 22,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20G" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-emoji-biju">
-                <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Emoji">
+                <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?ixlib=rb-4.0.3&w=500&q=80" alt="Brincos Emoji Pequeno Bijuteria">
                 <h3>Brincos Emoji Pequeno Bijuteria</h3>
                 <p class="price">R$ 12,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Emoji" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -691,37 +542,37 @@
         <h2>Folheado Ouro</h2>
         <div class="grid">
             <div class="card" id="brinco-folheado-ouro">
-                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Ouro">
+                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Folheado a Ouro">
                 <h3>Brinco Folheado a Ouro</h3>
                 <p class="price">R$ 89,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Ouro" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-folheado-prata">
-                <img src="img/ouro.jpg" alt="Brinco Prata">
+                <img src="img/ouro.jpg" alt="Brinco Folheado a ouro (Prata)">
                 <h3>Brinco Folheado a ouro</h3>
                 <p class="price">R$ 89,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Prata" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cartela-trio-folheado">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&w=500&q=80" alt="Cartela Trio">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&w=500&q=80" alt="Cartela Trio Folheado a Ouro">
                 <h3>Cartela Trio Folheado a Ouro</h3>
                 <p class="price">R$ 45,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Cartela%20Trio" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="conjunto-cordao-brinco">
-                <img src="img/pexels-svliiim-34399026.jpg" alt="Conjunto">
+                <img src="img/pexels-svliiim-34399026.jpg" alt="Conjunto Cordão e Brinco Luxo">
                 <h3>Conjunto Cordão e Brinco Luxo</h3>
                 <p class="price">R$ 120,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Cordão" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cordao-elo-grosso">
-                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Cordão Grosso">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Cordão Elo Grosso Folheado a Ouro">
                 <h3>Cordão Elo Grosso Folheado a Ouro</h3>
                 <p class="price">R$ 150,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Grosso" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cordao-fino-folheado">
-                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Cordão Fino">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Cordão Fino Folheado a Ouro">
                 <h3>Cordão Fino Folheado a Ouro</h3>
                 <p class="price">R$ 110,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Fino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -734,19 +585,19 @@
         <h2>Maquiagem</h2>
         <div class="grid">
             <div class="card" id="maquiagem-acessorios">
-                <img src="img/pinceis.jpg" alt="Acessórios">
+                <img src="img/pinceis.jpg" alt="Acessórios e Pincéis">
                 <h3>Acessórios e Pincéis</h3>
                 <p class="price">R$ 45,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Acessórios%20de%20Maquiagem" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="maquiagem-labios">
-                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&w=500&q=80" alt="Lábios">
+                <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&w=500&q=80" alt="Linha Lábios (Batom Matte/Gloss)">
                 <h3>Linha Lábios (Batom Matte/Gloss)</h3>
                 <p class="price">R$ 29,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Itens%20para%20Lábios" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="maquiagem-olhos">
-                <img src="img/rimel.jpg" alt="Olhos">
+                <img src="img/rimel.jpg" alt="Linha Olhos (Paletas e Rímel)">
                 <h3>Linha Olhos (Paletas e Rímel)</h3>
                 <p class="price">R$ 75,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Maquiagem%20para%20Olhos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -759,49 +610,49 @@
         <h2>Semijoias</h2>
         <div class="grid">
             <div class="card" id="anel-semijoia">
-                <img src="img/anel.jpg" alt="Anel">
+                <img src="img/anel.jpg" alt="Anel Feminino Cravejado">
                 <h3>Anel Feminino Cravejado</h3>
                 <p class="price">R$ 139,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Anel%20Feminino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="argola-banhado-semijoia">
-                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola Banho Ouro/Prata">
                 <h3>Argola Banho Ouro/Prata</h3>
                 <p class="price">R$ 95,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Banhada" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brincos-banhados-semijoia">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos Banhados a Ouro E Prata">
                 <h3>Brincos Banhados a Ouro E Prata</h3>
                 <p class="price">R$ 85,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20os%20Brincos%20Banhados" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colares-semijoia">
-                <img src="img/gargant.jpg" alt="Gargantilha">
+                <img src="img/gargant.jpg" alt="Colares / Gargantilhas / Correntes">
                 <h3>Colares / Gargantilhas / Correntes</h3>
                 <p class="price">R$ 115,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Correntes%20Femininas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="infantil-semijoia">
-                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Infantil">
+                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Semijoias Linha Infantil">
                 <h3>Semijoias Linha Infantil</h3>
                 <p class="price">R$ 65,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20da%20Linha%20Infantil" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="pingentes-semijoia">
-                <img src="img/pingente.jpg" alt="Pingentes">
+                <img src="img/pingente.jpg" alt="Pingentes Banhados">
                 <h3>Pingentes Banhados</h3>
                 <p class="price">R$ 40,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Pingentes" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="pulseiras-semijoia">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras Femininas">
                 <h3>Pulseiras Femininas</h3>
                 <p class="price">R$ 75,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Pulseiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="tornozeleira-semijoia">
-                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleira">
+                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleiras Banhadas">
                 <h3>Tornozeleiras Banhadas</h3>
                 <p class="price">R$ 55,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Tornozeleiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -814,7 +665,7 @@
         <h2>Suplemento Alimentar</h2>
         <div class="grid">
             <div class="card" id="suplemento-emagrecimento">
-                <img src="img/magra.jpg" alt="Emagrecimento">
+                <img src="img/magra.jpg" alt="Termogênico Emagrecimento">
                 <h3>Termogênico Emagrecimento</h3>
                 <p class="price">R$ 145,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Suplemento%20Emagrecimento" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -833,6 +684,12 @@
         </div>
         <p>&copy; 2026 Boutique de Luxo. Todos os direitos reservados.</p>
     </footer>
+
+    <!-- MODAL DE ZOOM NA IMAGEM -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="imgZoomed">
+    </div>
 
     <!-- SCRIPTS MÁGICOS -->
     <script>
@@ -904,20 +761,46 @@
                     const tituloProduto = card.querySelector('h3').innerText.toLowerCase();
                     
                     if (tituloProduto.includes(termoBusca)) {
-                        card.style.display = 'flex'; // Mantém o flexbox para alinhar o botão no fundo
+                        card.style.display = 'flex'; 
                         sectionTemResultado = true;
                     } else {
                         card.style.display = 'none';
                     }
                 });
 
-                // Oculta a seção inteira se não houver nenhum produto nela
                 if (sectionTemResultado) {
                     section.classList.remove('hidden');
                 } else {
                     section.classList.add('hidden');
                 }
             });
+        });
+
+        // 5. Sistema de Zoom na Imagem (Modal)
+        const modal = document.getElementById("imageModal");
+        const imgZoomed = document.getElementById("imgZoomed");
+        const closeModal = document.querySelector(".close-modal");
+        const productImages = document.querySelectorAll(".card img");
+
+        // Abrir Modal
+        productImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.style.display = "block";
+                imgZoomed.src = this.src; 
+                imgZoomed.alt = this.alt;
+            });
+        });
+
+        // Fechar Modal no X
+        closeModal.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+
+        // Fechar Modal clicando fora da foto
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
         });
     </script>
 </body>
