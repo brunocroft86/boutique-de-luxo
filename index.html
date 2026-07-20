@@ -3,9 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- === TAGS DE SEO === -->
     <title>Boutique de Luxo</title>
+    <meta name="description" content="Descubra o seu brilho! As melhores peças com qualidade e requinte. Aço Inoxidável, Folheados, Semijoias e Maquiagem.">
+    <meta name="keywords" content="boutique de luxo, semijoias, folheados a ouro, aço inoxidável, maquiagem, suplemento, brincos, colares">
+    <meta name="author" content="Boutique de Luxo">
+    
+    <!-- === TAGS OPEN GRAPH (Para compartilhar no WhatsApp, Instagram, Facebook) === -->
+    <meta property="og:title" content="Boutique de Luxo">
+    <meta property="og:description" content="As melhores peças com qualidade e requinte. Confira nosso catálogo de Joias e Maquiagens!">
+    <!-- Link absoluto do Vercel para o WhatsApp conseguir ler a imagem -->
+    <meta property="og:image" content="https://boutique-de-luxo-mu.vercel.app/img/boutique.png">
+    <meta property="og:url" content="https://boutique-de-luxo-mu.vercel.app/">
+    <meta property="og:type" content="website">
+
     <!-- Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
     <style>
         :root {
             --primary-color: #222;
@@ -49,24 +64,24 @@
             border-bottom: 1px solid var(--border-color);
         }
 
-        /* Ajuste da Logo com Imagem Local (Mais extensa conforme pedido) */
+        /* Ajuste da Logo com Imagem Local */
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
-            flex-basis: 350px; /* Dá mais espaço horizontal para a logo */
+            flex-basis: 350px;
         }
 
         .logo img {
-            height: 95px; /* Altura aumentada */
+            height: 95px;
             width: 100%;
             object-fit: contain;
-            object-position: left center; /* Cola a logo na esquerda */
-            transform: scale(1.1); /* Dá um zoom suave para preencher bordas brancas */
+            object-position: left center;
+            transform: scale(1.1);
             transform-origin: left center;
         }
 
-        /* Barra de Pesquisa (Design Premium) */
+        /* Barra de Pesquisa */
         .search-bar {
             flex: 1;
             max-width: 500px;
@@ -164,7 +179,7 @@
             max-width: 90vw;
             padding: 20px;
             display: none;
-            grid-template-columns: repeat(3, 1fr); /* Padrão de 3 colunas */
+            grid-template-columns: repeat(3, 1fr);
             gap: 20px;
             border-top: 3px solid var(--accent-color);
             opacity: 0;
@@ -176,7 +191,6 @@
             opacity: 1;
         }
 
-        /* Alinhamento inteligente para os menus das pontas não cortarem */
         nav ul.main-menu > li:first-child .mega-menu {
             left: 0;
             transform: translateX(0);
@@ -248,7 +262,7 @@
         .category-section {
             padding: 60px 5%;
             background-color: var(--bg-light);
-            scroll-margin-top: 150px; /* Espaço para o cabeçalho fixo */
+            scroll-margin-top: 150px;
         }
 
         .category-section:nth-child(even) {
@@ -286,8 +300,8 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-            scroll-margin-top: 180px; /* Quando clicar no menu, para exatamente aqui com respiro */
-            border: 2px solid transparent; /* Preparação para o efeito alvo */
+            scroll-margin-top: 180px;
+            border: 2px solid transparent;
         }
 
         .card:hover {
@@ -295,11 +309,10 @@
             box-shadow: 0 15px 30px rgba(0,0,0,0.1);
         }
 
-        /* EFEITO MÁGICO: Quando clica no link do menu, o produto acende! */
         .card:target {
             border: 2px solid var(--accent-color);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-            animation: piscarAlvo 1s ease 3; /* Pisca 3 vezes suavemente */
+            animation: piscarAlvo 1s ease 3;
         }
 
         @keyframes piscarAlvo {
@@ -322,7 +335,7 @@
             color: var(--primary-color);
             font-weight: 600;
             line-height: 1.3;
-            min-height: 46px; /* Mantém os cartões alinhados */
+            min-height: 46px;
         }
 
         .card .price {
@@ -400,13 +413,86 @@
         footer .social-icons a:hover {
             color: var(--accent-color);
         }
+
+        /* =========================================
+           RESPONSIVIDADE PARA CELULARES (NOVO) 
+           ========================================= */
+        @media (max-width: 768px) {
+            .top-bar {
+                flex-direction: column;
+                padding: 15px 5%;
+                gap: 15px;
+            }
+
+            .logo {
+                flex-basis: auto;
+                justify-content: center;
+            }
+
+            .logo img {
+                height: 70px; /* Logo ajustada para mobile */
+                transform: scale(1);
+                object-position: center;
+            }
+
+            .search-bar {
+                width: 100%;
+                margin: 0;
+            }
+
+            nav ul.main-menu {
+                gap: 10px;
+                padding: 10px 0;
+            }
+
+            nav ul.main-menu > li {
+                padding: 5px 10px;
+            }
+
+            nav ul.main-menu > li > a {
+                font-size: 12px; /* Fonte do menu reduzida */
+            }
+
+            /* Correção do Mega Menu no Celular */
+            .mega-menu {
+                width: 95vw;
+                left: 50% !important;
+                transform: translateX(-50%) !important;
+                grid-template-columns: repeat(2, 1fr) !important; /* Sempre 2 colunas para caber na tela */
+                padding: 15px;
+            }
+            
+            /* Mantém as categorias curtas com 1 coluna apenas */
+            li:nth-child(4) .mega-menu, li:nth-child(6) .mega-menu {
+                 grid-template-columns: 1fr !important;
+            }
+
+            .hero h1 { font-size: 36px; }
+            .hero p { font-size: 18px; }
+            
+            /* Aumenta a margem superior de rolagem para não tampar com o menu vertical maior do mobile */
+            .category-section {
+                scroll-margin-top: 250px; 
+            }
+            .card {
+                scroll-margin-top: 260px;
+            }
+
+            .whatsapp-float {
+                width: 55px;
+                height: 55px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
 <body>
 
     <header>
         <div class="top-bar">
-            <!-- SUA LOGO: Mantive o nome do arquivo que você enviou -->
+            <!-- SUA LOGO -->
             <a href="#" class="logo">
                 <img src="img/boutique.png" alt="Logo Boutique de Luxo">
             </a>
@@ -419,7 +505,7 @@
         
         <nav>
             <ul class="main-menu">
-                <!-- Dropdown Aço Inoxidável (Com Links para âncoras diretas dos produtos) -->
+                <!-- Dropdown Aço Inoxidável -->
                 <li>
                     <a href="#aco-inoxidavel">Aço Inoxidável <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
@@ -524,7 +610,7 @@
                     <a href="#semijoias">Semijoias <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
                         <a href="#anel-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?w=100&q=80" alt="Anel">
+                            <img src="img/anel.jpg" alt="Anel">
                             <span>Anel Feminino</span>
                         </a>
                         <a href="#argola-banhado-semijoia" class="menu-item">
@@ -536,7 +622,7 @@
                             <span>Brincos Banhados</span>
                         </a>
                         <a href="#colares-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1599643478514-4113cb602055?w=100&q=80" alt="Gargantilha">
+                            <img src="img/gargant.jpg" alt="Gargantilha">
                             <span>Colares e Correntes</span>
                         </a>
                         <a href="#infantil-semijoia" class="menu-item">
@@ -544,7 +630,7 @@
                             <span>Linha Infantil</span>
                         </a>
                         <a href="#pingentes-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1615397323282-311ba29d6d7e?w=100&q=80" alt="Pingentes">
+                            <img src="img/pingente.jpg" alt="Pingentes">
                             <span>Pingentes Variados</span>
                         </a>
                         <a href="#pulseiras-semijoia" class="menu-item">
@@ -563,7 +649,7 @@
                     <a href="#suplementos">Suplemento Alimentar <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: 1fr;">
                         <a href="#suplemento-emagrecimento" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1594882645126-14020914d58d?w=100&q=80" alt="Emagrecimento">
+                            <img src="img/magra.jpg" alt="Emagrecimento">
                             <span>Linha Emagrecimento</span>
                         </a>
                     </div>
