@@ -400,7 +400,8 @@
             }
             .card h3 {
                 font-size: 13px; /* Fonte menor para caber */
-                min-height: 38px;
+                min-height: auto; 
+                margin-bottom: 10px;
             }
             .card .price {
                 font-size: 16px; /* Preço menor */
@@ -422,6 +423,11 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
             scroll-margin-top: 220px; 
             border: 2px solid transparent; 
+            
+            /* MÁGICA DO ALINHAMENTO AQUI */
+            display: flex;
+            flex-direction: column;
+            height: 100%; /* Faz o cartão esticar para igualar aos vizinhos */
         }
 
         .card:hover {
@@ -446,7 +452,7 @@
             height: 280px; /* Altura original para telas grandes */
             object-fit: cover;
             border-radius: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .card h3 {
@@ -455,14 +461,16 @@
             color: var(--primary-color);
             font-weight: 600;
             line-height: 1.3;
-            min-height: 46px; 
         }
 
         .card .price {
             font-size: 22px;
             font-weight: bold;
             color: var(--accent-color);
-            margin-bottom: 20px;
+            margin-bottom: 15px;
+            
+            /* ALINHAMENTO DO PREÇO E BOTÃO NO FUNDO */
+            margin-top: auto; 
         }
 
         .btn-comprar {
@@ -741,7 +749,7 @@
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Feminino%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="conjunto-aco">
-                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&w=500&q=80" alt="Conjunto">
+                <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Conjunto">
                 <h3>Conjunto Aço Inoxidável Premium</h3>
                 <p class="price">R$ 89,90</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -753,7 +761,7 @@
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Piercing%20Umbigo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="trio-brinco-aco">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=500&q=80" alt="Trio Brinco">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Trio Brinco">
                 <h3>Trio de Brincos Aço</h3>
                 <p class="price">R$ 55,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Trio%20de%20Brincos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
