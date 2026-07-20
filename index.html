@@ -13,7 +13,7 @@
     <!-- Open Graph (Para compartilhar nas redes sociais e WhatsApp) -->
     <meta property="og:title" content="Boutique de Luxo | As melhores peças com requinte">
     <meta property="og:description" content="Venha conferir nosso catálogo de joias, semijoias, maquiagens e acessórios.">
-    <meta property="og:image" content="img/boutique.png"> <!-- Sua logo vai aparecer no preview -->
+    <meta property="og:image" content="img/boutique.png">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="pt_BR">
 
@@ -23,7 +23,7 @@
     <style>
         :root {
             --primary-color: #222;
-            --accent-color: #d4af37; /* Dourado luxo */
+            --accent-color: #d4af37;
             --bg-light: #f9f9f9;
             --whatsapp-green: #25d366;
             --border-color: #eaeaea;
@@ -198,7 +198,6 @@
             transition: opacity 0.3s ease;
         }
 
-        /* Hover apenas funciona em computadores */
         @media (min-width: 993px) {
             nav ul.main-menu > li:hover .mega-menu {
                 display: grid;
@@ -248,74 +247,25 @@
 
         /* RESPONSIVIDADE PARA CELULAR (Navegação) */
         @media (max-width: 992px) {
-            .logo {
-                flex-basis: auto; 
-            }
-            .logo img {
-                height: 70px; 
-                transform: scale(1);
-            }
-            .top-bar {
-                justify-content: space-between;
-                gap: 15px;
-            }
-            .search-bar {
-                order: 3; 
-                width: 100%;
-                max-width: 100%;
-                margin: 0;
-            }
-            .mobile-menu-btn {
-                display: block; 
-            }
-            nav {
-                padding: 0;
-            }
-            nav ul.main-menu {
-                flex-direction: column;
-                gap: 0;
-                display: none; 
-                background-color: #fff;
-                border-bottom: 1px solid var(--border-color);
-            }
-            nav ul.main-menu.active {
-                display: flex; 
-            }
-            nav ul.main-menu > li {
-                padding: 15px 5%;
-                border-top: 1px solid var(--border-color);
-            }
-            
-            /* Ajustes do Acordeão no celular */
-            .mega-menu {
-                position: static;
-                transform: none;
-                box-shadow: none;
-                width: 100%;
-                max-width: 100%;
-                display: none;
-                grid-template-columns: 1fr !important; /* Coluna única no celular */
-                border-top: none;
-                padding: 10px 0 0 10px;
-                opacity: 1; /* Retira o efeito de sumir no celular */
-            }
-            
-            /* Classes aplicadas pelo JavaScript quando tocado */
-            nav ul.main-menu > li.active-submenu .mega-menu {
-                display: grid !important;
-            }
-            nav ul.main-menu > li.active-submenu > a {
-                color: var(--accent-color);
-            }
-            nav ul.main-menu > li.active-submenu > a i {
-                transform: rotate(180deg); /* Gira a setinha para cima */
-            }
+            .logo { flex-basis: auto; }
+            .logo img { height: 70px; transform: scale(1); }
+            .top-bar { justify-content: space-between; gap: 15px; }
+            .search-bar { order: 3; width: 100%; max-width: 100%; margin: 0; }
+            .mobile-menu-btn { display: block; }
+            nav { padding: 0; }
+            nav ul.main-menu { flex-direction: column; gap: 0; display: none; background-color: #fff; border-bottom: 1px solid var(--border-color); }
+            nav ul.main-menu.active { display: flex; }
+            nav ul.main-menu > li { padding: 15px 5%; border-top: 1px solid var(--border-color); }
+            .mega-menu { position: static; transform: none; box-shadow: none; width: 100%; max-width: 100%; display: none; grid-template-columns: 1fr !important; border-top: none; padding: 10px 0 0 10px; opacity: 1; }
+            nav ul.main-menu > li.active-submenu .mega-menu { display: grid !important; }
+            nav ul.main-menu > li.active-submenu > a { color: var(--accent-color); }
+            nav ul.main-menu > li.active-submenu > a i { transform: rotate(180deg); }
         }
 
         /* Banner Principal Paralaxe - Reduzido */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            height: 250px; /* Reduzido de 450px para 250px */
+            height: 250px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -324,20 +274,8 @@
             padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 40px; /* Fonte menor */
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .hero p {
-            font-size: 18px; /* Fonte menor */
-            font-weight: 300;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
+        .hero h1 { font-size: 40px; margin-bottom: 10px; letter-spacing: 3px; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .hero p { font-size: 18px; font-weight: 300; letter-spacing: 1px; text-shadow: 1px 1px 3px rgba(0,0,0,0.5); }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 28px; }
@@ -351,10 +289,8 @@
             scroll-margin-top: 200px; 
         }
 
-        .category-section:nth-child(even) {
-            background-color: #fff;
-        }
-
+        .category-section:nth-child(even) { background-color: #fff; }
+        
         .category-section h2 {
             text-align: center;
             margin-bottom: 50px;
@@ -380,37 +316,16 @@
 
         /* CONFIGURAÇÃO PARA 2 COLUNAS NO CELULAR */
         @media (max-width: 600px) {
-            .category-section {
-                padding: 40px 5%;
-            }
-            .category-section h2 {
-                margin-bottom: 30px;
-                font-size: 24px;
-            }
+            .category-section { padding: 40px 5%; }
+            .category-section h2 { margin-bottom: 30px; font-size: 24px; }
             .grid {
-                grid-template-columns: 1fr 1fr; /* Força 2 colunas */
-                gap: 10px; /* Diminui o espaçamento */
+                grid-template-columns: 1fr 1fr;
+                gap: 10px;
             }
-            .card {
-                padding: 10px; /* Reduz espaço interno */
-            }
-            .card img {
-                height: 120px; /* Imagem menor */
-                margin-bottom: 10px;
-            }
-            .card h3 {
-                font-size: 13px; /* Fonte menor para caber */
-                min-height: auto; 
-                margin-bottom: 10px;
-            }
-            .card .price {
-                font-size: 16px; /* Preço menor */
-                margin-bottom: 12px;
-            }
-            .btn-comprar {
-                font-size: 12px; /* Botão menor */
-                padding: 8px;
-            }
+            .card { padding: 10px; }
+            .card h3 { font-size: 13px; min-height: auto; margin-bottom: 10px; }
+            .card .price { font-size: 16px; margin-bottom: 12px; }
+            .btn-comprar { font-size: 12px; padding: 8px; }
         }
 
         /* Cartões de Produtos e Efeito Alvo */
@@ -424,10 +339,9 @@
             scroll-margin-top: 220px; 
             border: 2px solid transparent; 
             
-            /* MÁGICA DO ALINHAMENTO AQUI */
             display: flex;
             flex-direction: column;
-            height: 100%; /* Faz o cartão esticar para igualar aos vizinhos */
+            height: 100%; 
         }
 
         .card:hover {
@@ -447,14 +361,16 @@
             100% { transform: scale(1); }
         }
 
+        /* MÁGICA DA IMAGEM QUADRADA (1:1) */
         .card img {
             width: 100%;
-            height: 280px; /* Altura original para telas grandes */
-            object-fit: contain; /* AJUSTE: Não corta mais as imagens */
-            object-position: center; /* AJUSTE: Centraliza perfeitamente */
-            background-color: #fff; /* Fundo branco pra não vazar cinza se a imagem for PNG */
+            height: auto;
+            aspect-ratio: 1 / 1; 
+            object-fit: cover; 
+            object-position: center;
             border-radius: 8px;
             margin-bottom: 15px;
+            background-color: #fff;
         }
 
         .card h3 {
@@ -470,8 +386,6 @@
             font-weight: bold;
             color: var(--accent-color);
             margin-bottom: 15px;
-            
-            /* ALINHAMENTO DO PREÇO E BOTÃO NO FUNDO */
             margin-top: auto; 
         }
 
@@ -491,9 +405,7 @@
             transition: background 0.3s ease;
         }
 
-        .btn-comprar:hover {
-            background-color: #1ebe57;
-        }
+        .btn-comprar:hover { background-color: #1ebe57; }
 
         /* Botão WhatsApp Flutuante */
         .whatsapp-float {
@@ -516,9 +428,7 @@
             transition: transform 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
         /* Rodapé */
         footer {
@@ -528,21 +438,12 @@
             padding: 40px 20px;
         }
 
-        footer .social-icons {
-            margin-bottom: 20px;
-        }
-
-        footer .social-icons a {
-            color: white;
-            font-size: 28px;
-            margin: 0 15px;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        footer .social-icons a:hover {
-            color: var(--accent-color);
-        }
+        footer .social-icons { margin-bottom: 20px; }
+        footer .social-icons a { color: white; font-size: 28px; margin: 0 15px; text-decoration: none; transition: color 0.3s; }
+        footer .social-icons a:hover { color: var(--accent-color); }
+        
+        /* Ocultar elementos via JavaScript */
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
@@ -556,7 +457,7 @@
             
             <!-- BARRA DE PESQUISA -->
             <div class="search-bar">
-                <input type="text" placeholder="Precisa de alguma coisa?">
+                <input type="text" id="searchInput" placeholder="Precisa de alguma coisa?">
                 <button><i class="fas fa-search"></i></button>
             </div>
 
@@ -568,7 +469,6 @@
         
         <nav>
             <ul class="main-menu" id="mainMenu">
-                <!-- Dropdown Aço Inoxidável -->
                 <li>
                     <a href="#aco-inoxidavel" class="category-toggle">Aço Inoxidável <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
@@ -598,8 +498,6 @@
                         </a>
                     </div>
                 </li>
-
-                <!-- Dropdown Bijuterias -->
                 <li>
                     <a href="#bijuterias" class="category-toggle">Bijuterias <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(1, 1fr);">
@@ -617,8 +515,6 @@
                         </a>
                     </div>
                 </li>
-
-                <!-- Dropdown Folheado Ouro -->
                 <li>
                     <a href="#folheados" class="category-toggle">Folheado Ouro <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
@@ -648,8 +544,6 @@
                         </a>
                     </div>
                 </li>
-
-                <!-- Dropdown Maquiagem -->
                 <li>
                     <a href="#maquiagem" class="category-toggle">Maquiagem <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: 1fr;">
@@ -667,8 +561,6 @@
                         </a>
                     </div>
                 </li>
-
-                <!-- Dropdown Semijoias -->
                 <li>
                     <a href="#semijoias" class="category-toggle">Semijoias <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
@@ -706,8 +598,6 @@
                         </a>
                     </div>
                 </li>
-
-                <!-- Dropdown Suplemento -->
                 <li>
                     <a href="#suplementos" class="category-toggle">Suplemento Alimentar <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: 1fr;">
@@ -825,7 +715,7 @@
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Cordão" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cordao-elo-grosso">
-                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=500&q=80" alt="Cordão Grosso">
+                <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Cordão Grosso">
                 <h3>Cordão Elo Grosso Folheado a Ouro</h3>
                 <p class="price">R$ 150,00</p>
                 <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Grosso" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -946,10 +836,10 @@
 
     <!-- SCRIPTS MÁGICOS -->
     <script>
+        // 1. Abre e fecha o menu principal (Hambúrguer)
         const btnMenu = document.getElementById('mobileMenuBtn');
         const mainMenu = document.getElementById('mainMenu');
 
-        // 1. Abre e fecha o menu principal (Hambúrguer)
         btnMenu.addEventListener('click', () => {
             mainMenu.classList.toggle('active');
             
@@ -957,7 +847,6 @@
                 btnMenu.innerHTML = '<i class="fas fa-times"></i>';
             } else {
                 btnMenu.innerHTML = '<i class="fas fa-bars"></i>';
-                // Recolhe todas as categorias abertas se a pessoa fechar o menu principal
                 document.querySelectorAll('nav ul.main-menu > li').forEach(li => {
                     li.classList.remove('active-submenu');
                 });
@@ -969,19 +858,15 @@
         
         categoryToggles.forEach(toggle => {
             toggle.addEventListener('click', function(e) {
-                // A mágica só acontece se for tela de celular
                 if (window.innerWidth <= 992) {
-                    e.preventDefault(); // Impede o clique de rolar a página para baixo
-                    
+                    e.preventDefault(); 
                     const parentLi = this.parentElement;
                     const isOpen = parentLi.classList.contains('active-submenu');
 
-                    // Fecha qualquer outra categoria que estava aberta antes
                     document.querySelectorAll('nav ul.main-menu > li').forEach(li => {
                         li.classList.remove('active-submenu');
                     });
 
-                    // Se a categoria tocada estava fechada, ela abre agora!
                     if (!isOpen) {
                         parentLi.classList.add('active-submenu');
                     }
@@ -997,10 +882,40 @@
                 if (window.innerWidth <= 992) {
                     mainMenu.classList.remove('active');
                     btnMenu.innerHTML = '<i class="fas fa-bars"></i>';
-                    
                     document.querySelectorAll('nav ul.main-menu > li').forEach(li => {
                         li.classList.remove('active-submenu');
                     });
+                }
+            });
+        });
+
+        // 4. Barra de Pesquisa Funcional
+        const searchInput = document.getElementById('searchInput');
+        
+        searchInput.addEventListener('input', function() {
+            const termoBusca = this.value.toLowerCase();
+            const sections = document.querySelectorAll('.category-section');
+
+            sections.forEach(section => {
+                let sectionTemResultado = false;
+                const cards = section.querySelectorAll('.card');
+
+                cards.forEach(card => {
+                    const tituloProduto = card.querySelector('h3').innerText.toLowerCase();
+                    
+                    if (tituloProduto.includes(termoBusca)) {
+                        card.style.display = 'flex'; // Mantém o flexbox para alinhar o botão no fundo
+                        sectionTemResultado = true;
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+
+                // Oculta a seção inteira se não houver nenhum produto nela
+                if (sectionTemResultado) {
+                    section.classList.remove('hidden');
+                } else {
+                    section.classList.add('hidden');
                 }
             });
         });
