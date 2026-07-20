@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <!-- === TAGS DE SEO === -->
-    <title>Boutique de Luxo</title>
-    <meta name="description" content="Descubra o seu brilho! As melhores peças com qualidade e requinte. Aço Inoxidável, Folheados, Semijoias e Maquiagem.">
-    <meta name="keywords" content="boutique de luxo, semijoias, folheados a ouro, aço inoxidável, maquiagem, suplemento, brincos, colares">
+    <!-- SEO Básico -->
+    <title>Boutique de Luxo | Joias, Semijoias e Maquiagem</title>
+    <meta name="description" content="Descubra o seu brilho na Boutique de Luxo. As melhores peças em Aço Inoxidável, Folheados a Ouro, Bijuterias, Semijoias e Maquiagem com qualidade e requinte.">
+    <meta name="keywords" content="Boutique de Luxo, Joias, Semijoias, Folheados, Ouro, Prata, Maquiagem, Bijuterias, Aço Inoxidável">
     <meta name="author" content="Boutique de Luxo">
-    
-    <!-- === TAGS OPEN GRAPH (Para compartilhar no WhatsApp, Instagram, Facebook) === -->
-    <meta property="og:title" content="Boutique de Luxo">
-    <meta property="og:description" content="As melhores peças com qualidade e requinte. Confira nosso catálogo de Joias e Maquiagens!">
-    <!-- Link absoluto do Vercel para o WhatsApp conseguir ler a imagem -->
-    <meta property="og:image" content="https://boutique-de-luxo-mu.vercel.app/img/boutique.png">
-    <meta property="og:url" content="https://boutique-de-luxo-mu.vercel.app/">
+
+    <!-- Open Graph (Para compartilhar nas redes sociais e WhatsApp) -->
+    <meta property="og:title" content="Boutique de Luxo | As melhores peças com requinte">
+    <meta property="og:description" content="Venha conferir nosso catálogo de joias, semijoias, maquiagens e acessórios.">
+    <meta property="og:image" content="img/boutique.png">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
 
     <!-- Font Awesome para os ícones -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,7 +23,7 @@
     <style>
         :root {
             --primary-color: #222;
-            --accent-color: #d4af37; /* Dourado luxo */
+            --accent-color: #d4af37;
             --bg-light: #f9f9f9;
             --whatsapp-green: #25d366;
             --border-color: #eaeaea;
@@ -37,7 +36,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        /* Comportamento de rolagem suave para as âncoras */
         html {
             scroll-behavior: smooth;
         }
@@ -62,9 +60,9 @@
             align-items: center;
             padding: 15px 5%;
             border-bottom: 1px solid var(--border-color);
+            flex-wrap: wrap; /* Importante para o celular */
         }
 
-        /* Ajuste da Logo com Imagem Local */
         .logo {
             display: flex;
             align-items: center;
@@ -81,7 +79,6 @@
             transform-origin: left center;
         }
 
-        /* Barra de Pesquisa */
         .search-bar {
             flex: 1;
             max-width: 500px;
@@ -130,7 +127,18 @@
             transform: scale(1.05);
         }
 
-        /* Menu de Navegação */
+        /* Botão Menu Hambúrguer (Escondido no PC) */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: var(--primary-color);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* Menu de Navegação PC */
         nav {
             background-color: #fff;
             padding: 0 5%;
@@ -142,6 +150,7 @@
             justify-content: center;
             gap: 30px;
             flex-wrap: wrap;
+            transition: all 0.3s ease;
         }
 
         nav ul.main-menu > li {
@@ -159,6 +168,7 @@
             transition: color 0.3s ease;
             display: flex;
             align-items: center;
+            justify-content: space-between;
             gap: 5px;
         }
 
@@ -166,7 +176,7 @@
             color: var(--accent-color);
         }
 
-        /* Estilo do Mega Menu Dropdown */
+        /* Mega Menu Dropdown */
         .mega-menu {
             position: absolute;
             top: 100%;
@@ -191,16 +201,8 @@
             opacity: 1;
         }
 
-        nav ul.main-menu > li:first-child .mega-menu {
-            left: 0;
-            transform: translateX(0);
-        }
-
-        nav ul.main-menu > li:last-child .mega-menu {
-            left: auto;
-            right: 0;
-            transform: translateX(0);
-        }
+        nav ul.main-menu > li:first-child .mega-menu { left: 0; transform: translateX(0); }
+        nav ul.main-menu > li:last-child .mega-menu { left: auto; right: 0; transform: translateX(0); }
 
         .menu-item {
             display: flex;
@@ -231,6 +233,67 @@
             font-weight: 500;
         }
 
+        /* RESPONSIVIDADE PARA CELULAR (Magia Acontece Aqui) */
+        @media (max-width: 992px) {
+            .logo {
+                flex-basis: auto;
+                max-width: 70%;
+            }
+            .logo img {
+                height: 70px;
+                transform: scale(1);
+            }
+            .top-bar {
+                justify-content: space-between;
+                gap: 0;
+            }
+            .mobile-menu-btn {
+                display: block;
+                order: 2; /* Garante que fica na direita da logo */
+            }
+            .search-bar {
+                order: 3; /* Joga a barra para debaixo da logo e menu */
+                width: 100%;
+                max-width: 100%;
+                margin: 15px 0 0 0;
+            }
+            nav {
+                padding: 0;
+            }
+            nav ul.main-menu {
+                flex-direction: column;
+                gap: 0;
+                display: none; /* Escondido por padrão */
+                background-color: #fff;
+                border-bottom: 1px solid var(--border-color);
+                width: 100%;
+            }
+            nav ul.main-menu.active {
+                display: flex; /* O JavaScript vai ativar isso */
+            }
+            nav ul.main-menu > li {
+                padding: 0;
+                border-top: 1px solid var(--border-color);
+            }
+            nav ul.main-menu > li > a {
+                padding: 20px 5%; /* Mais fácil de clicar com o dedo */
+            }
+            
+            /* Ajuste do Submenu no celular */
+            .mega-menu {
+                position: static;
+                transform: none;
+                box-shadow: none;
+                width: 100%;
+                max-width: 100%;
+                display: none;
+                grid-template-columns: 1fr !important; /* Uma coluna só */
+                border-top: none;
+                padding: 10px 5%;
+                background-color: var(--bg-light);
+            }
+        }
+
         /* Banner Principal Paralaxe */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
@@ -258,16 +321,20 @@
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
+        @media (max-width: 768px) {
+            .hero { height: 350px; }
+            .hero h1 { font-size: 32px; }
+            .hero p { font-size: 16px; }
+        }
+
         /* Vitrine de Produtos */
         .category-section {
             padding: 60px 5%;
             background-color: var(--bg-light);
-            scroll-margin-top: 150px;
+            scroll-margin-top: 200px;
         }
 
-        .category-section:nth-child(even) {
-            background-color: #fff;
-        }
+        .category-section:nth-child(even) { background-color: #fff; }
 
         .category-section h2 {
             text-align: center;
@@ -292,7 +359,6 @@
             gap: 40px;
         }
 
-        /* Cartões de Produtos e Efeito Alvo */
         .card {
             background: #fff;
             border-radius: 12px;
@@ -300,8 +366,8 @@
             text-align: center;
             box-shadow: 0 5px 15px rgba(0,0,0,0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-            scroll-margin-top: 180px;
-            border: 2px solid transparent;
+            scroll-margin-top: 220px; 
+            border: 2px solid transparent; 
         }
 
         .card:hover {
@@ -312,7 +378,7 @@
         .card:target {
             border: 2px solid var(--accent-color);
             box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
-            animation: piscarAlvo 1s ease 3;
+            animation: piscarAlvo 1s ease 3; 
         }
 
         @keyframes piscarAlvo {
@@ -335,7 +401,7 @@
             color: var(--primary-color);
             font-weight: 600;
             line-height: 1.3;
-            min-height: 46px;
+            min-height: 46px; 
         }
 
         .card .price {
@@ -361,22 +427,20 @@
             transition: background 0.3s ease;
         }
 
-        .btn-comprar:hover {
-            background-color: #1ebe57;
-        }
+        .btn-comprar:hover { background-color: #1ebe57; }
 
         /* Botão WhatsApp Flutuante */
         .whatsapp-float {
             position: fixed;
-            width: 65px;
-            height: 65px;
-            bottom: 40px;
-            right: 40px;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 30px;
             background-color: var(--whatsapp-green);
             color: #FFF;
             border-radius: 50px;
             text-align: center;
-            font-size: 35px;
+            font-size: 32px;
             box-shadow: 2px 2px 15px rgba(0,0,0,0.2);
             z-index: 1000;
             display: flex;
@@ -386,11 +450,8 @@
             transition: transform 0.3s ease;
         }
 
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
+        .whatsapp-float:hover { transform: scale(1.1); }
 
-        /* Rodapé */
         footer {
             background-color: var(--primary-color);
             color: white;
@@ -398,10 +459,7 @@
             padding: 40px 20px;
         }
 
-        footer .social-icons {
-            margin-bottom: 20px;
-        }
-
+        footer .social-icons { margin-bottom: 20px; }
         footer .social-icons a {
             color: white;
             font-size: 28px;
@@ -409,94 +467,24 @@
             text-decoration: none;
             transition: color 0.3s;
         }
-
-        footer .social-icons a:hover {
-            color: var(--accent-color);
-        }
-
-        /* =========================================
-           RESPONSIVIDADE PARA CELULARES (NOVO) 
-           ========================================= */
-        @media (max-width: 768px) {
-            .top-bar {
-                flex-direction: column;
-                padding: 15px 5%;
-                gap: 15px;
-            }
-
-            .logo {
-                flex-basis: auto;
-                justify-content: center;
-            }
-
-            .logo img {
-                height: 70px; /* Logo ajustada para mobile */
-                transform: scale(1);
-                object-position: center;
-            }
-
-            .search-bar {
-                width: 100%;
-                margin: 0;
-            }
-
-            nav ul.main-menu {
-                gap: 10px;
-                padding: 10px 0;
-            }
-
-            nav ul.main-menu > li {
-                padding: 5px 10px;
-            }
-
-            nav ul.main-menu > li > a {
-                font-size: 12px; /* Fonte do menu reduzida */
-            }
-
-            /* Correção do Mega Menu no Celular */
-            .mega-menu {
-                width: 95vw;
-                left: 50% !important;
-                transform: translateX(-50%) !important;
-                grid-template-columns: repeat(2, 1fr) !important; /* Sempre 2 colunas para caber na tela */
-                padding: 15px;
-            }
-            
-            /* Mantém as categorias curtas com 1 coluna apenas */
-            li:nth-child(4) .mega-menu, li:nth-child(6) .mega-menu {
-                 grid-template-columns: 1fr !important;
-            }
-
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
-            
-            /* Aumenta a margem superior de rolagem para não tampar com o menu vertical maior do mobile */
-            .category-section {
-                scroll-margin-top: 250px; 
-            }
-            .card {
-                scroll-margin-top: 260px;
-            }
-
-            .whatsapp-float {
-                width: 55px;
-                height: 55px;
-                bottom: 20px;
-                right: 20px;
-                font-size: 30px;
-            }
-        }
+        footer .social-icons a:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
 
     <header>
         <div class="top-bar">
-            <!-- SUA LOGO -->
+            <!-- LOGO -->
             <a href="#" class="logo">
                 <img src="img/boutique.png" alt="Logo Boutique de Luxo">
             </a>
             
+            <!-- BOTÃO MENU HAMBÚRGUER (Aparece só no celular) -->
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <!-- BARRA DE PESQUISA -->
             <div class="search-bar">
                 <input type="text" placeholder="Precisa de alguma coisa?">
                 <button><i class="fas fa-search"></i></button>
@@ -504,154 +492,62 @@
         </div>
         
         <nav>
-            <ul class="main-menu">
-                <!-- Dropdown Aço Inoxidável -->
+            <ul class="main-menu" id="mainMenu">
                 <li>
                     <a href="#aco-inoxidavel">Aço Inoxidável <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
-                        <a href="#argola-aco" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola">
-                            <span>Argola Modelos Variados</span>
-                        </a>
-                        <a href="#colar-autismo" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Colar Autismo">
-                            <span>Colar Autismo</span>
-                        </a>
-                        <a href="#colares-feminino-aco" class="menu-item">
-                            <img src="img/colarfemininoaco.jpg" alt="Colares Feminino">
-                            <span>Colares Feminino</span>
-                        </a>
-                        <a href="#conjunto-aco" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Conjunto">
-                            <span>Conjunto Aço Inoxidável</span>
-                        </a>
-                        <a href="#piercing-aco" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1615397323282-311ba29d6d7e?w=100&q=80" alt="Piercing">
-                            <span>Piercing Umbigo Aço Inox</span>
-                        </a>
-                        <a href="#trio-brinco-aco" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Trio Brinco">
-                            <span>Trio Brinco</span>
-                        </a>
+                        <a href="#argola-aco" class="menu-item"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola"><span>Argola Modelos Variados</span></a>
+                        <a href="#colar-autismo" class="menu-item"><img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Colar Autismo"><span>Colar Autismo</span></a>
+                        <a href="#colares-feminino-aco" class="menu-item"><img src="img/colarfemininoaco.jpg" alt="Colares Feminino"><span>Colares Feminino</span></a>
+                        <a href="#conjunto-aco" class="menu-item"><img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=100&q=80" alt="Conjunto"><span>Conjunto Aço Inoxidável</span></a>
+                        <a href="#piercing-aco" class="menu-item"><img src="img/piercingpendurado.jpg" alt="Piercing"><span>Piercing Umbigo Aço Inox</span></a>
+                        <a href="#trio-brinco-aco" class="menu-item"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Trio Brinco"><span>Trio Brinco</span></a>
                     </div>
                 </li>
-
-                <!-- Dropdown Bijuterias -->
                 <li>
                     <a href="#bijuterias">Bijuterias <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(1, 1fr);">
-                        <a href="#brinco-frutas-biju" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Brinco Frutinhas">
-                            <span>Brinco Frutinhas Coloridas</span>
-                        </a>
-                        <a href="#brinco-g-biju" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=100&q=80" alt="Brinco G">
-                            <span>Brinco G Bijuteria</span>
-                        </a>
-                        <a href="#brinco-emoji-biju" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=100&q=80" alt="Brinco Emoji">
-                            <span>Brincos Emoji Pequeno</span>
-                        </a>
+                        <a href="#brinco-frutas-biju" class="menu-item"><img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Brinco Frutinhas"><span>Brinco Frutinhas Coloridas</span></a>
+                        <a href="#brinco-g-biju" class="menu-item"><img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?w=100&q=80" alt="Brinco G"><span>Brinco G Bijuteria</span></a>
+                        <a href="#brinco-emoji-biju" class="menu-item"><img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?w=100&q=80" alt="Brinco Emoji"><span>Brincos Emoji Pequeno</span></a>
                     </div>
                 </li>
-
-                <!-- Dropdown Folheado Ouro -->
                 <li>
                     <a href="#folheados">Folheado Ouro <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
-                        <a href="#brinco-folheado-ouro" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Brinco Ouro">
-                            <span>Brinco Folheado Ouro</span>
-                        </a>
-                        <a href="#brinco-folheado-prata" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1605100804763-247f67b2548e?w=100&q=80" alt="Brinco Prata">
-                            <span>Brinco Folheado Prata</span>
-                        </a>
-                        <a href="#cartela-trio-folheado" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Cartela Trio">
-                            <span>Cartela Trio Folheado</span>
-                        </a>
-                        <a href="#conjunto-cordao-brinco" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1599643478514-4113cb602055?w=100&q=80" alt="Conjunto">
-                            <span>Conjunto Cordão e Brinco</span>
-                        </a>
-                        <a href="#cordao-elo-grosso" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Cordão Grosso">
-                            <span>Cordão Elo Grosso</span>
-                        </a>
-                        <a href="#cordao-fino-folheado" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Cordão Fino">
-                            <span>Cordão Fino Folheado</span>
-                        </a>
+                        <a href="#brinco-folheado-ouro" class="menu-item"><img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Brinco Ouro"><span>Brinco Folheado Ouro</span></a>
+                        <a href="#brinco-folheado-prata" class="menu-item"><img src="img/ouro.jpg" alt="Brinco Prata"><span>Brinco Folheado Prata</span></a>
+                        <a href="#cartela-trio-folheado" class="menu-item"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Cartela Trio"><span>Cartela Trio Folheado</span></a>
+                        <a href="#conjunto-cordao-brinco" class="menu-item"><img src="img/pexels-svliiim-34399026.jpg" alt="Conjunto"><span>Conjunto Cordão e Brinco</span></a>
+                        <a href="#cordao-elo-grosso" class="menu-item"><img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?w=100&q=80" alt="Cordão Grosso"><span>Cordão Elo Grosso</span></a>
+                        <a href="#cordao-fino-folheado" class="menu-item"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Cordão Fino"><span>Cordão Fino Folheado</span></a>
                     </div>
                 </li>
-
-                <!-- Dropdown Maquiagem -->
                 <li>
                     <a href="#maquiagem">Maquiagem <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: 1fr;">
-                        <a href="#maquiagem-acessorios" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1596462502278-27bf85033e5a?w=100&q=80" alt="Acessórios">
-                            <span>Acessórios</span>
-                        </a>
-                        <a href="#maquiagem-labios" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=100&q=80" alt="Lábios">
-                            <span>Lábios</span>
-                        </a>
-                        <a href="#maquiagem-olhos" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1512496115851-a1c8e04ce804?w=100&q=80" alt="Olhos">
-                            <span>Olhos</span>
-                        </a>
+                        <a href="#maquiagem-acessorios" class="menu-item"><img src="img/pinceis.jpg" alt="Acessórios"><span>Acessórios</span></a>
+                        <a href="#maquiagem-labios" class="menu-item"><img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=100&q=80" alt="Lábios"><span>Lábios</span></a>
+                        <a href="#maquiagem-olhos" class="menu-item"><img src="img/rimel.jpg" alt="Olhos"><span>Olhos</span></a>
                     </div>
                 </li>
-
-                <!-- Dropdown Semijoias -->
                 <li>
                     <a href="#semijoias">Semijoias <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
-                        <a href="#anel-semijoia" class="menu-item">
-                            <img src="img/anel.jpg" alt="Anel">
-                            <span>Anel Feminino</span>
-                        </a>
-                        <a href="#argola-banhado-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola">
-                            <span>Argola Banho Ouro/Prata</span>
-                        </a>
-                        <a href="#brincos-banhados-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos">
-                            <span>Brincos Banhados</span>
-                        </a>
-                        <a href="#colares-semijoia" class="menu-item">
-                            <img src="img/gargant.jpg" alt="Gargantilha">
-                            <span>Colares e Correntes</span>
-                        </a>
-                        <a href="#infantil-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Infantil">
-                            <span>Linha Infantil</span>
-                        </a>
-                        <a href="#pingentes-semijoia" class="menu-item">
-                            <img src="img/pingente.jpg" alt="Pingentes">
-                            <span>Pingentes Variados</span>
-                        </a>
-                        <a href="#pulseiras-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras">
-                            <span>Pulseiras Luxo</span>
-                        </a>
-                        <a href="#tornozeleira-semijoia" class="menu-item">
-                            <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleira">
-                            <span>Tornozeleiras</span>
-                        </a>
+                        <a href="#anel-semijoia" class="menu-item"><img src="img/anel.jpg" alt="Anel"><span>Anel Feminino</span></a>
+                        <a href="#argola-banhado-semijoia" class="menu-item"><img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola"><span>Argola Banho Ouro/Prata</span></a>
+                        <a href="#brincos-banhados-semijoia" class="menu-item"><img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos"><span>Brincos Banhados</span></a>
+                        <a href="#colares-semijoia" class="menu-item"><img src="img/gargant.jpg" alt="Gargantilha"><span>Colares e Correntes</span></a>
+                        <a href="#infantil-semijoia" class="menu-item"><img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Infantil"><span>Linha Infantil</span></a>
+                        <a href="#pingentes-semijoia" class="menu-item"><img src="img/pingente.jpg" alt="Pingentes"><span>Pingentes Variados</span></a>
+                        <a href="#pulseiras-semijoia" class="menu-item"><img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras"><span>Pulseiras Luxo</span></a>
+                        <a href="#tornozeleira-semijoia" class="menu-item"><img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleira"><span>Tornozeleiras</span></a>
                     </div>
                 </li>
-
-                <!-- Dropdown Suplemento -->
                 <li>
                     <a href="#suplementos">Suplemento Alimentar <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: 1fr;">
-                        <a href="#suplemento-emagrecimento" class="menu-item">
-                            <img src="img/magra.jpg" alt="Emagrecimento">
-                            <span>Linha Emagrecimento</span>
-                        </a>
+                        <a href="#suplemento-emagrecimento" class="menu-item"><img src="img/magra.jpg" alt="Emagrecimento"><span>Linha Emagrecimento</span></a>
                     </div>
                 </li>
             </ul>
@@ -665,8 +561,7 @@
         </div>
     </div>
 
-    
-    <!-- SEÇÃO 1: Aço Inoxidável (6 Produtos) -->
+    <!-- SEÇÃO 1: Aço Inoxidável -->
     <section id="aco-inoxidavel" class="category-section">
         <h2>Aço Inoxidável</h2>
         <div class="grid">
@@ -709,7 +604,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO 2: Bijuterias (3 Produtos) -->
+    <!-- SEÇÃO 2: Bijuterias -->
     <section id="bijuterias" class="category-section">
         <h2>Bijuterias</h2>
         <div class="grid">
@@ -734,7 +629,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO 3: Folheado Ouro (6 Produtos) -->
+    <!-- SEÇÃO 3: Folheado Ouro -->
     <section id="folheados" class="category-section">
         <h2>Folheado Ouro</h2>
         <div class="grid">
@@ -777,7 +672,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO 4: Maquiagem (3 Produtos) -->
+    <!-- SEÇÃO 4: Maquiagem -->
     <section id="maquiagem" class="category-section">
         <h2>Maquiagem</h2>
         <div class="grid">
@@ -802,7 +697,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO 5: Semijoias (8 Produtos) -->
+    <!-- SEÇÃO 5: Semijoias -->
     <section id="semijoias" class="category-section">
         <h2>Semijoias</h2>
         <div class="grid">
@@ -813,13 +708,13 @@
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Anel%20Feminino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="argola-banhado-semijoia">
-                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Argola">
+                <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola">
                 <h3>Argola Banhado a Ouro e Prata</h3>
                 <p class="price">R$ 95,00</p>
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Banhada" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brincos-banhados-semijoia">
-                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=500&q=80" alt="Brincos">
+                <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos">
                 <h3>Brincos Banhados a Ouro E Prata</h3>
                 <p class="price">R$ 85,00</p>
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20os%20Brincos%20Banhados" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -831,7 +726,7 @@
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Correntes%20Femininas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="infantil-semijoia">
-                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&w=500&q=80" alt="Infantil">
+                <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Infantil">
                 <h3>Semijoias Linha Infantil</h3>
                 <p class="price">R$ 65,00</p>
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20da%20Linha%20Infantil" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -843,13 +738,13 @@
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Pingentes" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="pulseiras-semijoia">
-                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&w=500&q=80" alt="Pulseiras">
+                <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras">
                 <h3>Pulseiras Femininas</h3>
                 <p class="price">R$ 75,00</p>
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Pulseiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="tornozeleira-semijoia">
-                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?ixlib=rb-4.0.3&w=500&q=80" alt="Tornozeleira">
+                <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleira">
                 <h3>Tornozeleiras Banhadas</h3>
                 <p class="price">R$ 55,00</p>
                 <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Tornozeleiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
@@ -857,7 +752,7 @@
         </div>
     </section>
 
-    <!-- SEÇÃO 6: Suplemento Alimentar (1 Produto) -->
+    <!-- SEÇÃO 6: Suplemento Alimentar -->
     <section id="suplementos" class="category-section">
         <h2>Suplemento Alimentar</h2>
         <div class="grid">
@@ -882,5 +777,32 @@
         <p>&copy; 2026 Boutique de Luxo. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- SCRIPT PARA O MENU HAMBÚRGUER -->
+    <script>
+        const btnMenu = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        const menuLinks = document.querySelectorAll('.main-menu > li > a');
+
+        // Abre/Fecha o menu ao clicar no hambúrguer
+        btnMenu.addEventListener('click', () => {
+            mainMenu.classList.toggle('active');
+            
+            if(mainMenu.classList.contains('active')) {
+                btnMenu.innerHTML = '<i class="fas fa-times"></i>';
+            } else {
+                btnMenu.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+
+        // No celular, ao clicar em uma categoria (ex: Bijuterias), fecha o menu e rola a tela
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if(window.innerWidth <= 992) {
+                    mainMenu.classList.remove('active');
+                    btnMenu.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
