@@ -246,7 +246,7 @@
             font-weight: 500;
         }
 
-        /* RESPONSIVIDADE PARA CELULAR */
+        /* RESPONSIVIDADE PARA CELULAR (Navegação) */
         @media (max-width: 992px) {
             .logo {
                 flex-basis: auto; 
@@ -312,10 +312,10 @@
             }
         }
 
-        /* Banner Principal Paralaxe */
+        /* Banner Principal Paralaxe - Reduzido */
         .hero {
             background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover fixed;
-            height: 450px;
+            height: 250px; /* Reduzido de 450px para 250px */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -325,23 +325,23 @@
         }
 
         .hero h1 {
-            font-size: 56px;
-            margin-bottom: 15px;
+            font-size: 40px; /* Fonte menor */
+            margin-bottom: 10px;
             letter-spacing: 3px;
             text-transform: uppercase;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
 
         .hero p {
-            font-size: 22px;
+            font-size: 18px; /* Fonte menor */
             font-weight: 300;
             letter-spacing: 1px;
             text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
         }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 36px; }
-            .hero p { font-size: 18px; }
+            .hero h1 { font-size: 28px; }
+            .hero p { font-size: 16px; }
         }
 
         /* Vitrine de Produtos */
@@ -378,6 +378,40 @@
             gap: 40px;
         }
 
+        /* CONFIGURAÇÃO PARA 2 COLUNAS NO CELULAR */
+        @media (max-width: 600px) {
+            .category-section {
+                padding: 40px 5%;
+            }
+            .category-section h2 {
+                margin-bottom: 30px;
+                font-size: 24px;
+            }
+            .grid {
+                grid-template-columns: 1fr 1fr; /* Força 2 colunas */
+                gap: 10px; /* Diminui o espaçamento */
+            }
+            .card {
+                padding: 10px; /* Reduz espaço interno */
+            }
+            .card img {
+                height: 120px; /* Imagem menor */
+                margin-bottom: 10px;
+            }
+            .card h3 {
+                font-size: 13px; /* Fonte menor para caber */
+                min-height: 38px;
+            }
+            .card .price {
+                font-size: 16px; /* Preço menor */
+                margin-bottom: 12px;
+            }
+            .btn-comprar {
+                font-size: 12px; /* Botão menor */
+                padding: 8px;
+            }
+        }
+
         /* Cartões de Produtos e Efeito Alvo */
         .card {
             background: #fff;
@@ -409,7 +443,7 @@
 
         .card img {
             width: 100%;
-            height: 280px;
+            height: 280px; /* Altura original para telas grandes */
             object-fit: cover;
             border-radius: 8px;
             margin-bottom: 20px;
@@ -524,7 +558,7 @@
         
         <nav>
             <ul class="main-menu" id="mainMenu">
-                <!-- Dropdown Aço Inoxidável (Adicionada a classe category-toggle) -->
+                <!-- Dropdown Aço Inoxidável -->
                 <li>
                     <a href="#aco-inoxidavel" class="category-toggle">Aço Inoxidável <i class="fas fa-chevron-down" style="font-size: 10px;"></i></a>
                     <div class="mega-menu" style="grid-template-columns: repeat(2, 1fr);">
@@ -692,37 +726,37 @@
                 <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Argola">
                 <h3>Argola Aço Inoxidável Modelos Variados</h3>
                 <p class="price">R$ 35,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Aço%20Inoxidável" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Aço%20Inoxidável" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colar-autismo">
                 <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=500&q=80" alt="Colar Autismo">
                 <h3>Colar Autismo Aço Inoxidável</h3>
                 <p class="price">R$ 49,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Autismo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Autismo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colares-feminino-aco">
                 <img src="img/colarfemininoaco.jpg" alt="Colares Feminino">
                 <h3>Colares Femininos Aço</h3>
                 <p class="price">R$ 59,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Feminino%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Colar%20Feminino%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="conjunto-aco">
                 <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?ixlib=rb-4.0.3&w=500&q=80" alt="Conjunto">
                 <h3>Conjunto Aço Inoxidável Premium</h3>
                 <p class="price">R$ 89,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Aço" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="piercing-aco">
                 <img src="img/piercingpendurado.jpg" alt="Piercing">
                 <h3>Piercing Umbigo Pendurado Aço</h3>
                 <p class="price">R$ 29,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Piercing%20Umbigo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Piercing%20Umbigo" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="trio-brinco-aco">
                 <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?ixlib=rb-4.0.3&w=500&q=80" alt="Trio Brinco">
                 <h3>Trio de Brincos Aço</h3>
                 <p class="price">R$ 55,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Trio%20de%20Brincos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Trio%20de%20Brincos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
@@ -735,19 +769,19 @@
                 <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Frutinhas">
                 <h3>Brinco Frutinhas Coloridas Bijuteria</h3>
                 <p class="price">R$ 15,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Frutinhas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Frutinhas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-g-biju">
                 <img src="https://images.unsplash.com/photo-1635767798638-3e25273a8236?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco G">
                 <h3>Brinco Argola G Bijuteria</h3>
                 <p class="price">R$ 22,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20G" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20G" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-emoji-biju">
                 <img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Emoji">
                 <h3>Brincos Emoji Pequeno Bijuteria</h3>
                 <p class="price">R$ 12,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Emoji" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Emoji" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
@@ -760,37 +794,37 @@
                 <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?ixlib=rb-4.0.3&w=500&q=80" alt="Brinco Ouro">
                 <h3>Brinco Folheado a Ouro</h3>
                 <p class="price">R$ 89,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Ouro" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Ouro" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brinco-folheado-prata">
                 <img src="img/ouro.jpg" alt="Brinco Prata">
                 <h3>Brinco Folheado a ouro</h3>
                 <p class="price">R$ 89,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Prata" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Brinco%20Folheado%20Prata" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cartela-trio-folheado">
                 <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?ixlib=rb-4.0.3&w=500&q=80" alt="Cartela Trio">
                 <h3>Cartela Trio Folheado a Ouro</h3>
                 <p class="price">R$ 45,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20a%20Cartela%20Trio" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Cartela%20Trio" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="conjunto-cordao-brinco">
                 <img src="img/pexels-svliiim-34399026.jpg" alt="Conjunto">
                 <h3>Conjunto Cordão e Brinco Luxo</h3>
                 <p class="price">R$ 120,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Cordão" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Conjunto%20Cordão" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cordao-elo-grosso">
                 <img src="https://images.unsplash.com/photo-1599643477877-530eb83abc8e?ixlib=rb-4.0.3&w=500&q=80" alt="Cordão Grosso">
                 <h3>Cordão Elo Grosso Folheado a Ouro</h3>
                 <p class="price">R$ 150,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Grosso" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Grosso" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="cordao-fino-folheado">
                 <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?ixlib=rb-4.0.3&w=500&q=80" alt="Cordão Fino">
                 <h3>Cordão Fino Folheado a Ouro</h3>
                 <p class="price">R$ 110,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Fino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Cordão%20Fino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
@@ -803,19 +837,19 @@
                 <img src="img/pinceis.jpg" alt="Acessórios">
                 <h3>Acessórios e Pincéis</h3>
                 <p class="price">R$ 45,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Acessórios%20de%20Maquiagem" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Acessórios%20de%20Maquiagem" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="maquiagem-labios">
                 <img src="https://images.unsplash.com/photo-1586495777744-4413f21062fa?ixlib=rb-4.0.3&w=500&q=80" alt="Lábios">
                 <h3>Linha Lábios (Batom Matte/Gloss)</h3>
                 <p class="price">R$ 29,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Itens%20para%20Lábios" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Itens%20para%20Lábios" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="maquiagem-olhos">
                 <img src="img/rimel.jpg" alt="Olhos">
                 <h3>Linha Olhos (Paletas e Rímel)</h3>
                 <p class="price">R$ 75,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Maquiagem%20para%20Olhos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Maquiagem%20para%20Olhos" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
@@ -828,49 +862,49 @@
                 <img src="img/anel.jpg" alt="Anel">
                 <h3>Anel Feminino Cravejado</h3>
                 <p class="price">R$ 139,90</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Anel%20Feminino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Anel%20Feminino" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="argola-banhado-semijoia">
                 <img src="https://images.unsplash.com/photo-1606760227091-3dd870d97f1d?w=100&q=80" alt="Argola">
-                <h3>Argola Banhado a Ouro e Prata</h3>
+                <h3>Argola Banho Ouro/Prata</h3>
                 <p class="price">R$ 95,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Banhada" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20a%20Argola%20Banhada" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="brincos-banhados-semijoia">
                 <img src="https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=100&q=80" alt="Brincos">
                 <h3>Brincos Banhados a Ouro E Prata</h3>
                 <p class="price">R$ 85,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20os%20Brincos%20Banhados" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20os%20Brincos%20Banhados" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="colares-semijoia">
                 <img src="img/gargant.jpg" alt="Gargantilha">
                 <h3>Colares / Gargantilhas / Correntes</h3>
                 <p class="price">R$ 115,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Correntes%20Femininas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Correntes%20Femininas" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="infantil-semijoia">
                 <img src="https://images.unsplash.com/photo-1535632787350-4e68ef0ac584?w=100&q=80" alt="Infantil">
                 <h3>Semijoias Linha Infantil</h3>
                 <p class="price">R$ 65,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20da%20Linha%20Infantil" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20da%20Linha%20Infantil" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="pingentes-semijoia">
                 <img src="img/pingente.jpg" alt="Pingentes">
                 <h3>Pingentes Banhados</h3>
                 <p class="price">R$ 40,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Pingentes" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Pingentes" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="pulseiras-semijoia">
                 <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=100&q=80" alt="Pulseiras">
                 <h3>Pulseiras Femininas</h3>
                 <p class="price">R$ 75,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Pulseiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Pulseiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
             <div class="card" id="tornozeleira-semijoia">
                 <img src="https://images.unsplash.com/photo-1629224316810-9d8805b95e76?w=100&q=80" alt="Tornozeleira">
                 <h3>Tornozeleiras Banhadas</h3>
                 <p class="price">R$ 55,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20Tornozeleiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20Tornozeleiras" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
@@ -883,13 +917,13 @@
                 <img src="img/magra.jpg" alt="Emagrecimento">
                 <h3>Termogênico Emagrecimento</h3>
                 <p class="price">R$ 145,00</p>
-                <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Gostaria%20de%20comprar%20o%20Suplemento%20Emagrecimento" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
+                <a href="https://wa.me/5521974238930?text=Olá!%20Gostaria%20de%20comprar%20o%20Suplemento%20Emagrecimento" class="btn-comprar" target="_blank"><i class="fab fa-whatsapp"></i> Comprar</a>
             </div>
         </div>
     </section>
 
     <!-- Ícone flutuante do WhatsApp -->
-    <a href="https://wa.me/55SEUNUMERO?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida." class="whatsapp-float" target="_blank">
+    <a href="https://wa.me/5521974238930?text=Olá!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20uma%20dúvida." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
